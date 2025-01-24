@@ -1,0 +1,6 @@
+from decimal import Decimal
+
+raio = Decimal('2')
+pi = Decimal('3.14159265358979323846264338327950288419716939937510')
+area = pi * raio**2
+print(f"A={area:.50f}")
