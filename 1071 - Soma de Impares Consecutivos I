@@ -1,0 +1,17 @@
+X = int(input())
+Y = int(input())
+
+
+menor = min(X, Y)
+maior = max(X, Y)
+
+
+soma_impares = 0
+
+
+for numero in range(menor + 1, maior):
+    if numero % 2 != 0:  # Verifica se o número é ímpar
+        soma_impares += numero
+
+
+print(soma_impares)
