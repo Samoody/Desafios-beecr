@@ -1,0 +1,23 @@
+def calcular_consumo_medio(distancia, combustivel):
+  """Calcula o consumo médio de um veículo.
+
+  Args:
+    distancia: Distância percorrida em quilômetros.
+    combustivel: Quantidade de combustível consumida em litros.
+
+  Returns:
+    O consumo médio em km/l.
+  """
+
+  consumo_medio = distancia / combustivel
+  return consumo_medio
+
+
+distancia = int(input())
+combustivel = float(input())
+
+
+resultado = calcular_consumo_medio(distancia, combustivel)
+
+
+print(f"{resultado:.3f} km/l")
