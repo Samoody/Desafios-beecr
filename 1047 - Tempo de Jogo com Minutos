@@ -1,0 +1,22 @@
+def calcular_duracao(hora_inicio, minuto_inicio, hora_fim, minuto_fim):
+    inicio_total = hora_inicio * 60 + minuto_inicio
+    fim_total = hora_fim * 60 + minuto_fim
+    
+    if inicio_total < fim_total:
+        duracao_total = fim_total - inicio_total
+    else:
+        duracao_total = (24 * 60 - inicio_total) + fim_total
+    
+    horas = duracao_total // 60
+    minutos = duracao_total % 60
+    
+    if horas == 0 and minutos == 0:
+        horas = 24
+    
+    print(f"O JOGO DUROU {horas} HORA(S) E {minutos} MINUTO(S)")
+
+
+entrada = input().split()
+hora_inicio, minuto_inicio, hora_fim, minuto_fim = map(int, entrada)
+
+calcular_duracao(hora_inicio, minuto_inicio, hora_fim, minuto_fim)
