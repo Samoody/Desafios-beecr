@@ -1,0 +1,38 @@
+import sys
+
+def eh_primo(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+def jogar_robbie(moedas, salto):
+    soma = 0
+    for i in range(len(moedas) - 1, -1, -salto):
+        soma += moedas[i]
+    
+    if eh_primo(soma):
+        print("You’re a coastal aircraft, Robbie, a large silver aircraft.")
+    else:
+        print("Bad boy! I’ll hit you.")
+
+
+entrada = sys.stdin.read().strip().split("\n")
+
+i = 0
+while i < len(entrada):
+    M = int(entrada[i])
+    if M < 2 or M > 20:
+        break
+    
+    moedas = []
+    for j in range(1, M + 1):
+        moedas.append(int(entrada[i + j]))
+    
+    N = int(entrada[i + M + 1])
+    
+    jogar_robbie(moedas, N)
+    
+    i += M + 2
