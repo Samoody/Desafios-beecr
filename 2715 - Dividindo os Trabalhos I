@@ -1,0 +1,45 @@
+def min_difference(values):
+    """
+    Calcula a menor diferença possível entre as somas das dificuldades dos trabalhos,
+    dividindo-os entre Rangel e Gugu.
+
+    Args:
+        values: Uma lista com as dificuldades dos trabalhos.
+
+    Returns:
+        A menor diferença possível.
+    """
+
+    total_sum = sum(values)
+    min_diff = float('inf')
+    sum_rangel = 0
+
+    for value in values:
+       
+        sum_rangel += value
+
+       
+        diff = abs(sum_rangel - (total_sum - sum_rangel))
+
+       
+        min_diff = min(min_diff, diff)
+
+    return min_diff
+
+def main():
+    """
+    Lê os dados de entrada e imprime a saída.
+    """
+    while True:
+        try:
+            n = int(input())  
+            values = list(map(int, input().split()))
+
+            result = min_difference(values)
+            print(result)
+       
+        except EOFError:
+            break
+
+if __name__ == "__main__":
+    main()
