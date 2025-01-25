@@ -1,0 +1,24 @@
+def contar_acertos(tipo_cha, respostas):
+  """Conta o número de participantes que acertaram o tipo de chá.
+
+  Args:
+    tipo_cha: O tipo de chá correto (1-4).
+    respostas: Uma lista com as respostas dos participantes.
+
+  Returns:
+    O número de respostas corretas.
+  """
+
+  acertos = 0
+  for resposta in respostas:
+    if resposta == tipo_cha:
+      acertos += 1
+  return acertos
+
+
+tipo_cha = int(input())
+respostas = list(map(int, input().split()))
+
+
+acertos = contar_acertos(tipo_cha, respostas)
+print(acertos)
