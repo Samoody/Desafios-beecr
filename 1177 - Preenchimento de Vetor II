@@ -1,0 +1,35 @@
+def preencher_vetor(T, tamanho_vetor):
+    """Preenche um vetor com a sequência de valores de 0 até T-1 repetidas vezes.
+
+    Args:
+        T: Valor máximo da sequência (2 ≤ T ≤ 50).
+        tamanho_vetor: Tamanho do vetor a ser preenchido.
+
+    Returns:
+        Um vetor preenchido com a sequência repetida.
+
+    Raises:
+        ValueError: If T is outside the valid range (2 ≤ T ≤ 50).
+    """
+
+    if T < 2 or T > 50:
+        raise ValueError("T must be between 2 and 50 (inclusive).")
+
+    N = [0] * tamanho_vetor
+    indice = 0
+    while indice < tamanho_vetor:
+        for i in range(min(T, tamanho_vetor - indice)): 
+            N[indice] = i
+            indice += 1
+
+    return N
+
+try:
+    T = int(input())
+    tamanho_vetor = 1000
+    vetor = preencher_vetor(T, tamanho_vetor)
+
+    for i, valor in enumerate(vetor):
+        print(f"N[{i}] = {valor}")
+except ValueError as e:
+    print(f"Error: {e}")
